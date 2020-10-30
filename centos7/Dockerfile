@@ -8,6 +8,7 @@ RUN yum install -y \
         gcc && \
     yum groupinstall -y "Development Tools" && \
     yum install -y \
+        libffi-devel \
         openssl-devel
 RUN yum clean -y all
 
@@ -17,6 +18,7 @@ RUN curl https://www.python.org/ftp/python/3.8.5/Python-3.8.5.tgz -O -J -L && \
     /usr/src/Python-3.8.5/configure --enable-optimizations --prefix=/usr/bin/python3 && \
     make altinstall && \
     ln -s /usr/bin/python3/bin/python3.8 /usr/bin/python3.8 && \
+    rm -rf /usr/bin/python && \
     ln -s /usr/bin/python3/bin/python3.8 /usr/bin/python && \
     rm Python-3.8.5.tgz
 
