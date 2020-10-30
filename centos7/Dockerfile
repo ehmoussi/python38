@@ -17,6 +17,7 @@ RUN curl https://www.python.org/ftp/python/3.8.5/Python-3.8.5.tgz -O -J -L && \
     /usr/src/Python-3.8.5/configure --enable-optimizations --prefix=/usr/bin/python3 && \
     make altinstall && \
     ln -s /usr/bin/python3/bin/python3.8 /usr/bin/python3.8 && \
+    ln -s /usr/bin/python3/bin/python3.8 /usr/bin/python && \
     rm Python-3.8.5.tgz
 
 # set python3.8 as default
