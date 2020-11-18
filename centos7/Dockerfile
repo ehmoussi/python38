@@ -15,7 +15,7 @@ RUN yum clean -y all
 # Download and install Python 3.8
 RUN curl https://www.python.org/ftp/python/3.8.5/Python-3.8.5.tgz -O -J -L && \
     tar xzf Python-3.8.5.tgz -C /usr/src/ && \
-    /usr/src/Python-3.8.5/configure --enable-optimizations --prefix=/usr/bin/python3 && \
+    /usr/src/Python-3.8.5/configure --enable-shared --enable-optimizations --prefix=/usr/bin/python3 && \
     make altinstall && \
     ln -s /usr/bin/python3/bin/python3.8 /usr/bin/python3.8 && \
     rm -rf /usr/bin/python && \
